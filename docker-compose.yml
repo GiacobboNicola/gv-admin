@@ -1,0 +1,15 @@
+version: "3"
+name: "frontend"
+
+services:
+  app:
+    image: gulp-app
+    command: sh -c "npm run serve"
+    build:
+      context: ./app
+    volumes:
+      - ./app:/app
+    ports:
+      - 3000:3000
+    environment:
+      NODE_ENV: development
